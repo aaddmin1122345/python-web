@@ -1,0 +1,23 @@
+{% extends 'root/root_class_layout.html' %}
+
+{% block class %}
+    <div class="container">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">{{departments_name.departments_name}}</h3>
+                <h4 class="panel-tiile">修改班级</h4>
+            </div>
+            <div class="panel-body">
+                <form method="post">
+                    {% csrf_token %}
+                        <div class="form-group">
+                            <label>{{ class_form.label }}</label>
+                            {{ class_form }}
+                            <span style="color:red;">{{ class_form.errors.0 }}</span>
+                        </div>
+                    <button type="submit" class="btn btn-primary">提 交</button>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

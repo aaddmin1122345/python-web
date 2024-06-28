@@ -1,0 +1,57 @@
+{% extends 'student/student_layout.html' %}
+{% load static %}
+
+{% block css %}
+    <style>
+        .choose {
+            background-color:#C0C0C0;
+        }
+    </style>
+{% endblock %}
+{% block content %}
+<main class="container">
+<div class="container mt-3">
+  <h2>选课</h2>
+
+<!--        <form method="post">-->
+<!--            {% csrf_token %}-->
+<!--          <div class="my-3">-->
+<!--              {% for obj in course_tuple %}-->
+<!--            <div class="form-check">-->
+<!--              <input id="a{{obj.0}}" name="paymentMethod" type="radio" class="form-check-input" checked="" required="">-->
+<!--              <label class="form-check-label" for="a{{obj.0}}">{{ obj.1 }} 总人数：50</label>-->
+<!--            </div>-->
+<!--              {% endfor %}-->
+<!--          </div>-->
+<!--        </form>-->
+  <form method="post">
+  <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+
+            {% csrf_token %}
+{% for obj in course_tuple %}
+      <div class="col">
+        <div class="card mb-4 rounded-3 shadow-sm">
+          <div class="card-header py-3">
+            <h4 class="my-0 fw-normal">选修</h4>
+          </div>
+          <div class="card-body">
+            <ul class="list-unstyled mt-3 mb-4">
+            <div class="form-check">
+              <input id="a{{obj.0}}" name="paymentMethod" type="radio" class="form-check-input" checked="" required="" value="{{obj.0}}">
+              <label class="form-check-label" for="a{{obj.0}}">{{ obj.1 }} 总人数：50</label>
+            </div>
+            </ul>
+            <button type="submit" class="w-100 btn btn-lg btn-info">提交</button>
+          </div>
+        </div>
+      </div>
+                      {% endfor %}
+
+  </div>
+    </form>
+</div>
+</main>
+{% endblock %}
+
+{% block js %}
+{% endblock %}

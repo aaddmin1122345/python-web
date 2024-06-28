@@ -1,0 +1,38 @@
+    ## 院系管理员
+
+    # 专业表
+    path('teacher/<int:name>/professional_list/', teacher.professional_list),
+    path('teacher/<int:name>/professional_add/', teacher.professional_add),
+    path('teacher/<int:name>/professional_editor/', teacher.professional_editor),
+    path('teacher/<int:name>/professional_delete/', teacher.professional_delete),
+
+    # 班级表
+    path('teacher/<int:name>/class_list/', teacher.class_list),
+    path('teacher/<int:name>/class_add/', teacher.class_add),
+    path('teacher/<int:name>/class_editor/', teacher.class_editor),
+    path('teacher/<int:name>/class_delete/', teacher.class_delete),
+
+    # 教师   teacher
+    path('teacher/<int:name>/teacher_list/', teacher.teacher_list),
+    path('teacher/<int:name>/teacher_add/', teacher.teacher_add),
+    path('teacher/<int:name>/teacher_editor/', teacher.teacher_editor),
+    path('teacher/<int:name>/teacher_delete/', teacher.teacher_delete),
+
+    # 学生   student
+    path('teacher/<int:name>/student/', teacher.student),
+    path('teacher/<int:name>/student_list/', teacher.student_list),
+    path('teacher/<int:name>/student_add/', teacher.student_add),
+    path('teacher/<int:name>/student_editor/', teacher.student_editor),
+    path('teacher/<int:name>/student_delete/', teacher.student_delete),
+
+    # 课程表 course
+    path('teacher/<int:name>/course_list/', teacher.course_list),
+    path('teacher/<int:name>/course_add/', teacher.course_add),
+    path('teacher/<int:name>/course_editor/', teacher.course_editor),
+    path('teacher/<int:name>/course_delete/', teacher.course_delete),
+
+    # 搜索
+    path("teacher/<int:name>/search/", teacher.search),
+
+    path('teacher/<int:name>/teacher/', teacher.teacher),  # 个人信息显示
+    path('teacher/<int:name>/teacher_pwd/', teacher.teacher_pwd),

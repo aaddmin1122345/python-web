@@ -1,0 +1,23 @@
+{% extends 'admin/admin_teacher_layout.html' %}
+
+{% block teacher %}
+    <div class="container">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">{{departments_name.departments_name}}</h3>
+                <h4 class="panel-tiile">修改教师信息</h4>
+            </div>
+            <div class="panel-body">
+                <form method="post">
+                    {% csrf_token %}
+                        <div class="form-group">
+                            <label>{{ teacher_form.label }}</label>
+                            {{ teacher_form }}
+                            <span style="color:red;">{{ teacher_form.errors.0 }}</span>
+                        </div>
+                    <button type="submit" class="btn btn-primary">提 交</button>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

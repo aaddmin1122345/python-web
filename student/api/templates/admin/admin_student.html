@@ -1,0 +1,41 @@
+{% extends 'admin/admin_student_layout.html' %}
+
+
+{% block student %}
+   <div class="container">
+       <div style="margin-bottom: 10px">
+            <a class="btn btn-success" href="/admin/{{departments_name.departments}}/student_add/">
+                <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>
+                添加学生
+            </a>
+        </div>
+        <div class="panel panel-default">
+            <table class="table table-bordered">
+                <thead>
+                <tr>
+                    <th>班级</th>
+                    <th>学院</th>
+                    <th>专业</th>
+                    <th>操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for obj in class_list_all %}
+                    <tr>
+                        <td>{{ obj.class_name }}</td>
+                        <td>{{ departments_name.departments_name }}</td>
+                        <td>{{ obj.professional }}</td>
+                        <td>
+                            <a class="btn btn-primary btn-xs" href="/admin/{{ departments_name.departments }}/student/?classID={{ obj.classID }}">查看</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+       <ul class="pagination">
+        {{ page_string }}
+    </ul>
+    </div>
+
+{% endblock %}

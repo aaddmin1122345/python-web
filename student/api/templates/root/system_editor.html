@@ -1,0 +1,50 @@
+{% extends 'root/root_layout.html' %}
+{% load static %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/navigation_bar.css'%}">
+    <style>
+        .system {
+            background-color:#C0C0C0;
+        }
+    </style>
+{% endblock %}
+{% block content %}
+<main>
+    <div class="container">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title"> 修改院系管理员 </h3>
+            </div>
+            <div class="panel-body">
+                <form method="post">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        {% csrf_token %}
+                        {% for input in administrator_adds %}
+                            <label>{{input.label}}</label>
+                            <div class="form-group">{{ input }}</div>
+                            <span style="color: red;">{{ input.errors.0 }}</span>
+                        {% endfor %}
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">提 交</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock %}
+
+{% block js %}
+ <script>
+  /* global bootstrap: false */
+  (function () {
+    'use strict'
+    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+    tooltipTriggerList.forEach(function (tooltipTriggerEl) {
+      new bootstrap.Tooltip(tooltipTriggerEl)
+    })
+  })()
+  </script>
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends 'root/root_layout.html' %}
+{% load static %}
+
+{% block content %}
+<h4 align="center">超级管理员信息</h4>
+<h5  align="center">超级管理员账号拥有最大的权利，权利越大责任越大。</h5>
+<h5 align="center">账号：{{root_admin.id}}</h5>
+<p></p>
+<p></p><br>
+<p></p>
+<div align="center">
+    <a type="button" class="btn btn-success" href="/root/admin_pwd/?nid={{root_admin.id}}">修改密码</a>
+    &nbsp&nbsp
+    <a type="button" class="btn btn-success" href="/logout/">退出登陆</a>
+</div>
+
+{% endblock %}
+
+{% block js %}
+
+{% endblock %}

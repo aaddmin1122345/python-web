@@ -1,0 +1,43 @@
+{% extends 'admin/admin_teaching_layout.html' %}
+
+{% block teacher %}
+   <div class="container">
+        <div style="margin-bottom: 10px">
+            <a class="btn btn-success" href="/admin/{{ departmentsf.departments}}/teaching_add/">
+                <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>
+                添加授课信息
+            </a>
+        </div>
+        <div class="panel panel-default">
+            <!-- Default panel contents -->
+            <div class="panel-heading">
+                <span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>
+                教师列表
+            </div>
+            <!-- Table -->
+            <table class="table table-bordered">
+                <thead>
+                <tr>
+                    <th>课程</th>
+                    <th>教师</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for obj in teaching_all %}
+                    <tr>
+                        <td>{{ obj.course }}</td>
+                        <td>{{ obj.teacher }}</td>
+                        <td>
+                            <a class="btn btn-primary btn-xs" href="/admin/{{ departments_name.departments }}/teaching_editor/?nid={{ obj.id }}">修改</a>
+                            <a class="btn btn-danger btn-xs" href="/admin/{{ departments_name.departments}}/teaching_delete/?nid={{ obj.id }}">删除</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+       <ul class="pagination">
+            {{ page_string }}
+        </ul>
+    </div>
+{% endblock %}

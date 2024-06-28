@@ -14,6 +14,10 @@ python manager.py runserver
 
 ![运行效果](https://github.com/aaddmin1122345/python-web/blob/main/image/2.png?raw=true)
 
+![运行效果](https://github.com/aaddmin1122345/python-web/blob/main/image/3.png?raw=true)
+
+
+
 ## 1.3 访问网址
 
 ### 系统管理员登录网址

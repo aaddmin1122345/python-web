@@ -25,8 +25,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "django-insecure-fd9p@u=t2bfzc9)bd(7yv6k#ocmd1$d3k5r@nclce^o@^d$r_6"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = True
-DEBUG = False
+DEBUG = True
+# DEBUG = False
 
 ALLOWED_HOSTS = ["*"]
 
@@ -132,7 +132,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
-STATIC_URL = "static/"
+STATIC_URL = "/static/"
 STATIC_ROOT = os.path.join(BASE_DIR, "static")
 
 
@@ -145,5 +145,5 @@ EMAIL_USE_SSL = True
 EMAIL_HOST = "smtp.qq.com"
 EMAIL_PORT = 465
 EMAIL_HOST_USER = "2639709539@qq.com"  # 帐号
-EMAIL_HOST_PASSWORD = "ruxfrofwnipadjhj"  # 授权码
+EMAIL_HOST_PASSWORD = "adquvgnjeozkdjbc"  # 授权码
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER

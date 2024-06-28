@@ -152,5 +152,8 @@ urlpatterns = [
     path('teacher/<int:name>/teacher_list/', teacher.teacher_list),
     path('teacher/<int:name>/teacher_electives/', teacher.teacher_electives),
     path('teacher/<int:name>/teacher_registration/', teacher.registration),
-    path('teacher/<int:name>/teacher_pwd/', teacher.teacher_pwd),
+    # path('teacher/<int:name>/choose/', teacher.choose),
+    # path('studteacherent/<int:name>/pwd/', teacher.pwd),
+    # path('teacher/<int:name>/teacher/', teacher.teacher),  # 个人信息显示
+    # path('teacher/<int:name>/teacher_pwd/', teacher.teacher_pwd),
 ]

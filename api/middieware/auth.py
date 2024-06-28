@@ -9,7 +9,7 @@ class AuthMiddleware(MiddlewareMixin):
         # 0.排除那些不需要登录就能访问的页面
         #   request.path_info 获取当前用户请求的URL /login/
         url = request.path_info
-        if url == "/login/" or url == "/root_login/" or url == "/img/code/" or url == "/con_pwd/" or url == "/email/" or url == "/logout/"or url == "/sql/":
+        if url == "/login/" or url == "/root_login/" or url == "/img/code/" or url == "/con_pwd/" or url == "/email/" or url == "/logout/":
             return
         # 1.读取当前访问的用户的session信息，如果能读到，说明已登陆过，就可以继续向后走。
         dict = request.session.get("info")

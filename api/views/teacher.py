@@ -58,12 +58,10 @@ def registration(request, name):
     })
 
 # 修改密码
-
-
-def teacher_pwd(request, name):
+def pwd(request, name):
     if request.method == "GET":
         form = MeodelForm_table.PWDeditor()
-        return render(request, "teacher/teacher_pwd.html", {
+        return render(request, "student/student_pwd.html", {
             "name": name,
             "form": form,
         })
@@ -71,23 +69,21 @@ def teacher_pwd(request, name):
     if form.is_valid():
         # 原密码的校验
         form_password = form.cleaned_data['password']
-        password = models.Teacher.objects.filter(
-            teacher=name).values("password").first()
+        password = models.Students.objects.filter(student=name).values("password").first()
         password = password["password"]
         nid = int(name)
         if password != md5(form_password):
             messages.info(request, "原密码错误！")
-            return redirect("/teacher/%d/teacher_pwd/" % (name))
+            return redirect("/student/%d/pwd/"%(name))
         elif form.cleaned_data['new_password'] != form.cleaned_data["con_password"]:
             messages.info(request, "密码不一致！")
-            return redirect("/teacher/%d/teacher_pwd/" % (name))
+            return redirect("/student/%d/pwd/"%(name))
         else:
             new_password = md5(form.cleaned_data['new_password'])
-            models.Teacher.objects.filter(
-                teacher=nid).update(password=new_password)
+            models.Students.objects.filter(student=nid).update(password=new_password)
             messages.info(request, "修改成功！")
-            return redirect("/teacher/%d/teacher_pwd/" % (name))
-    return render(request, "teacher/teacher_pwd.html", {
+            return redirect("/student/%d/pwd/"%(name))
+    return render(request, "student/pwd.html", {
         "name": name,
         "form": form,
     })

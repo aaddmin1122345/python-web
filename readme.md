@@ -8,13 +8,17 @@
 
 使用python,运行的时候缺少啥就安装啥,这行命令我测试是可以直接在py3.7,3.8完整运行的, pip install django mysqlclient captcha gvcode
 
-### ![运行效果](https://)
+python manager.py runserver
+
+### ![运行效果](https://github.com/aaddmin1122345/python-web/blob/main/image/1.png?raw=true)
+
+![运行效果](https://github.com/aaddmin1122345/python-web/blob/main/image/2.png?raw=true)
 
 ## 1.3 访问网址
 
 ### 系统管理员登录网址
 
-[http://ip/root_login/](http://ip/root_login/)
+[http://127.0.0.1:8000/root_login/](http://ip/root_login/)
 
 系统管理员：
 - 账号：8888
@@ -22,7 +26,7 @@
 
 ### 管理员、教师、学生登录网址
 
-[http://ip/login/](http://ip/login/)
+[http://127.0.0.1:8000/login/](http://ip/login/)
 
 管理员：
 - 账号：10070

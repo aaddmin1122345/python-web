@@ -1,0 +1,25 @@
+{% extends 'admin/admin_teacher_layout.html' %}
+
+{% block teacher %}
+    <div class="container">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">添加教师信息</h3>
+            </div>
+            <div class="panel-body">
+                <form method="post">
+                    {% csrf_token %}
+                    <div class="form-group">
+                                <div class="form-group">
+                                    <label>{{ teacher_adds.label }}</label>
+                                    {{ teacher_adds }}
+                                    <span style="color:red;">{{ teacher_adds.errors.0 }}</span>
+                                </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">提 交</button>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

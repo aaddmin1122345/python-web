@@ -1,0 +1,29 @@
+{% extends 'root/root_departments_layout.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="container">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title"> 新建学院 </h3>
+            </div>
+            <div class="panel-body">
+                <form method="post">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label>学院名称</label>
+                        {% csrf_token %}
+
+                        {% for input in departments %}
+                            <div class="form-group">{{ input }}</div>
+                            <span style="color: red;">{{ input.errors.0 }}</span>
+                        {% endfor %}
+<!--                        <input type="text" class="form-control" placeholder="学院名称" name="departments_name"/>-->
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">提 交</button>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

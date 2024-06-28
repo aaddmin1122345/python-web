@@ -1,0 +1,39 @@
+{% extends 'student/student_layout.html' %}
+{% load static %}
+
+{% block css %}
+    <style>
+        .course {
+            background-color:#C0C0C0;
+        }
+
+    </style>
+{% endblock %}
+{% block content %}
+<main class="container">
+<div class="container">
+  <h2>我的课程</h2>
+<table class="table">
+    <tbody>
+      <tr>
+        <td>学号</td>
+        <td>姓名</td>
+        <td>课程</td>
+        <td>所获学分</td>
+      </tr>
+    {% for obj in course_list %}
+      <tr>
+        <td>{{obj.student.student}}</td>
+        <td>{{obj.student.student_name}}</td>
+        <td>{{obj.course}}</td>
+        <td>{{obj.course_results}}</td>
+      </tr>
+    </tbody>
+    {% endfor %}
+  </table>
+</div>
+</main>
+{% endblock %}
+
+{% block js %}
+{% endblock %}

@@ -1,0 +1,49 @@
+{% extends 'teacher/teacher_layout.html' %}
+{% load static %}
+
+{% block css %}
+    <style>
+        .student {
+            background-color:#C0C0C0;
+        }
+    </style>
+{% endblock %}
+{% block content %}
+<main class="container">
+<div class="container mt-3">
+    <h2>登记成绩</h2>
+      <table class="table">
+    <tbody>
+      <tr>
+        <td>学号</td>
+        <td>{{studnet_list.student}}</td>
+      </tr>
+      <tr>
+        <td>姓名</td>
+        <td>{{studnet_list.student_name}}</td>
+      </tr>
+      <tr>
+        <td>班级</td>
+        <td>{{studnet_list.student_class}}</td>
+      </tr>
+    </tbody>
+  </table>
+     <form method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            <div class="form-group">
+                {% for form in form %}
+                <label>{{ form.label }}</label>
+                {{ form }}
+                <span style="color:red;">{{ form.errors.0 }}</span>
+                {% endfor %}
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary">提 交</button>
+    </form>
+</div>
+</main>
+{% endblock %}
+
+{% block js %}
+{% endblock %}

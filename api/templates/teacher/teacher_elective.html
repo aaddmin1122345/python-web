@@ -1,0 +1,44 @@
+{% extends 'teacher/teacher_layout.html' %}
+{% load static %}
+
+{% block css %}
+    <style>
+        .student {
+            background-color:#C0C0C0;
+        }
+    </style>
+{% endblock %}
+{% block content %}
+<main class="container">
+<div class="container mt-3">
+  <h2>成绩登记</h2>
+  <table class="table table-bordered">
+    <thead>
+    <tr>
+        <th>课程</th>
+        <th>学号</th>
+        <th>学生姓名</th>
+        <th>成绩</th>
+        <th>操作</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for obj in electives_all %}
+        <tr>
+            <td>{{obj.course}}</td>
+            <td>{{ obj.student.student }}</td>
+            <td>{{ obj.student.student_name }}</td>
+            <td>{{ obj.course_results }}</td>
+            <td>
+                <a class="btn btn-primary btn-xs" href="/teacher/{{ name }}/teacher_registration/?nid={{ obj.electives }}">登记成绩</a>
+            </td>
+        </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+</div>
+</main>
+{% endblock %}
+
+{% block js %}
+{% endblock %}

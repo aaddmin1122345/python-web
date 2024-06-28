@@ -1,0 +1,27 @@
+{% extends 'admin/admin_professional_layout.html' %}
+{% load static %}
+
+{% block professional %}
+    <div class="container">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">{{departments_name.departments_name}}</h3>
+                <h4 class="panel-tiile">修改专业</h4>
+            </div>
+            <div class="panel-body">
+                <form method="post">
+                    {% csrf_token %}
+                        <div class="form-group">
+                            <label>{{ professional_form.label }}</label>
+                            {{ professional_form.professional_name }}
+                            <span style="color:red;">{{ professional_form.errors.0 }}</span>
+                            <label>{{ professional_form.label }}</label>
+                            {{ professional_form.administrator_departments }}
+                            <span style="color:red;">{{ professional_form.errors.0 }}</span>
+                        </div>
+                    <button type="submit" class="btn btn-primary">提 交</button>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

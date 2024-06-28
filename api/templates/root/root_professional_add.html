@@ -1,0 +1,26 @@
+{% extends 'root/root_professional_layout.html' %}
+{% load static %}
+
+{% block professional %}
+    <div class="container">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">添加专业</h3>
+            </div>
+            <div class="panel-body">
+                <form method="post">
+                    {% csrf_token %}
+                    <div class="form-group">
+                                <div class="form-group">
+                                    <label>{{ professional.label }}</label>
+                                    {{ professional }}
+                                    <span style="color:red;">{{ professional.errors.0 }}</span>
+                                </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">提 交</button>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}
